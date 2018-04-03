@@ -12,17 +12,9 @@ class cached_property(object):
         if inst is None:
             return self
         name = self.name
-        if hasattr(inst, name):
-            return getattr(inst, name)
         result = self.wrapped(inst)
         setattr(inst, name, result)
         return result
-
-    def __set__(self, inst, value):
-        setattr(inst, self.name, value)
-
-    def __delete__(self, inst):
-        delattr(inst, self.name)
 
 
 if __name__ == '__main__':
