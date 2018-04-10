@@ -1,9 +1,9 @@
 import random
 
 
-def sample_wr(iterator, choose=random.choice):
+def sample_wr(iterable, choose=random.choice):
     while True:
-        yield choose(iterator)
+        yield choose(iterable)
 
 
 if __name__ == '__main__':
